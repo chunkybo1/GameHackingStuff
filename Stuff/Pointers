@@ -1,0 +1,17 @@
+So you're having trouble finding pointers, eh? Worry not, you aren't the only one. Hopefully by the end of this you'll understand what pointers are.
+
+Say you drove to a neighborhood to try and find a guy, maybe his name is John. You don't know where he is, but you need to find him to ask about how much money you owe him.
+// In this, the neighborhood is your module (i.e. client.dll).
+You knock on the first door and ask if they know where John lives. They say they don't and redirect you to house 13.
+// In this, the first house you knock on is your base address.
+You go to house 13, ask about John, and they tell you to go to house 15.
+// In this, house 13 is your first offset (i.e. 0xA1)
+You go to house 15, ask about John, and they tell you that John lives in house 30.
+// In this, house 15 is your second offset. This could go on for a long time, usually the max amount of offsets is 8.
+You go to house 30, knock on the door, and John answers.
+// John is your final address, the one that stores the value you want
+You ask John how much you owe him. He says 20 dollars.
+// In this, the value you wish to retrieve is 20, which is what your address will store. Now, you could beat him up and change it with WriteProcessMemory, but that should be self
+// explanitory.
+
+And thats all! Hopefully you now have a better understanding of pointers and how they work.
